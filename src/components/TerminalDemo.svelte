@@ -88,7 +88,7 @@
           <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
           <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
           <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
-          <span class="ml-2 text-text-muted text-[11px]">swal@mesh-node-01:~</span>
+          <span class="ml-2 text-gray-300 text-[11px]">swal@mesh-node-01:~</span>
         </div>
         <span class="text-[10px] text-accent-cyan">TLS 1.3 / ML-KEM-768</span>
       </div>

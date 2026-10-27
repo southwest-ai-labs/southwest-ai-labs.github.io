@@ -1,0 +1,30 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.svelte";
+import Footer from "../../components/Footer.svelte";
+---
+
+<Layout title="Security | SWAL">
+  <Navbar client:load />
+  <main class="pt-32 pb-24 px-6 max-w-4xl mx-auto space-y-12">
+    <div class="space-y-4">
+      <h1 class="text-4xl font-extrabold text-white font-mono">Security & Vulnerability Disclosure</h1>
+      <p class="text-text-secondary leading-relaxed">Our policy for reporting security vulnerabilities.</p>
+    </div>
+
+    <div class="glass-panel p-8 space-y-6">
+      <h2 class="text-xl font-bold text-white font-mono">Reporting a Vulnerability</h2>
+      <p class="text-text-secondary leading-relaxed">
+        If you discover a security vulnerability in any SWAL application or core repository, please report it privately via
+        <strong>GitHub Security Advisories</strong> on the affected repository ("Report a vulnerability").
+      </p>
+
+      <ul class="list-disc pl-6 space-y-2 text-text-secondary">
+        <li>We will acknowledge receipt of your vulnerability report within 5 business days.</li>
+        <li>We do not operate a bug bounty program at this time.</li>
+        <li>Do not disclose the vulnerability publicly until we have deployed a patch or mitigation.</li>
+      </ul>
+    </div>
+  </main>
+  <Footer client:visible />
+</Layout>

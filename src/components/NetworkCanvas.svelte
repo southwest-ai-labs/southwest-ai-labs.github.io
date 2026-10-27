@@ -125,7 +125,7 @@
     linesGeo.setAttribute("position", linePosAttr);
 
     const linesMat = new THREE.LineBasicMaterial({
-      color: 0x06b6d4,
+      color: 0x888888,
       transparent: true,
       opacity: 0.28,
       blending: THREE.AdditiveBlending,
@@ -147,7 +147,7 @@
 
     const packetGeo = new THREE.SphereGeometry(1.0, 8, 8);
     const packetMat = new THREE.MeshBasicMaterial({
-      color: 0xffffff,
+      color: 0x888888,
       transparent: true,
       opacity: 0.9,
       blending: THREE.AdditiveBlending
@@ -232,6 +232,7 @@
 
     // Animation Loop
     let animId: number;
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const animate = () => {
       animId = requestAnimationFrame(animate);
@@ -242,6 +243,12 @@
       camera.position.x = mouseX;
       camera.position.y = 15 + mouseY;
       camera.lookAt(0, 0, 0);
+
+      if (mediaQuery.matches) {
+        renderer.render(scene, camera);
+        return;
+      }
+
 
       // Autonomous gentle group rotation
       if (!isDragging) {
@@ -348,20 +355,7 @@
         DATOS SIMULADOS
       </span>
     </div>
-    <div class="flex flex-wrap items-center gap-2 sm:gap-4 text-[10px] sm:text-[11px] font-mono text-text-secondary bg-bg-surface/60 sm:bg-transparent px-2.5 py-1.5 sm:p-0 rounded-xl sm:rounded-none backdrop-blur-sm sm:backdrop-blur-none w-fit">
-      <span class="flex items-center gap-1">
-        <span class="w-1.5 h-1.5 rounded-full bg-accent-emerald"></span>
-        Nodes: <strong class="text-white">{activePeersCount}</strong>
-      </span>
-      <span class="flex items-center gap-1">
-        <span class="w-1.5 h-1.5 rounded-full bg-accent-orange"></span>
-        Sync: <strong class="text-white">{syncRate}</strong>
-      </span>
-      <span class="flex items-center gap-1">
-        <span class="w-1.5 h-1.5 rounded-full bg-accent-cyan"></span>
-        Crypto: <strong class="text-white">ML-DSA-65</strong>
-      </span>
-    </div>
+
   </div>
 
   <!-- Bottom Legend & Drag Cue -->

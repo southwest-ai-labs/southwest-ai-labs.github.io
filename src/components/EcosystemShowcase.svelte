@@ -42,7 +42,7 @@
           <span>{t("apps.badge")}</span>
         </div>
         <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
-          {t("apps.title")} <span class="text-accent-cyan">{t("apps.titleCount")}</span>
+          {t("apps.title")} <span class="text-accent-cyan">({SWAL_APPS.length} Apps)</span>
         </h2>
         <p class="text-text-secondary text-base max-w-xl">
           {t("apps.subtitle")}
@@ -73,7 +73,7 @@
         class:border={selectedCategory !== "all"}
         class:border-white-5={selectedCategory !== "all"}
       >
-        {t("apps.allProjects")}
+        All Projects ({SWAL_APPS.length})
       </button>
 
       <button
