@@ -5,11 +5,8 @@
   let currentMaintainers = $state(1); // SWAL Genesis node is active
   let targetMaintainers = 2; // Threshold for active DAO quorum
 
-  let scannedPeers = $state(14820);
-  let qualifiedPeers = $state(28);
 
   let maintainersPercent = $derived(((currentMaintainers / targetMaintainers) * 100).toFixed(0));
-  let scanProgressPercent = $derived(((qualifiedPeers / 100) * 100).toFixed(1));
 </script>
 
 <section id="dao" class="py-24 px-6 relative bg-bg-dark/60 border-t border-white/5">
@@ -42,17 +39,6 @@
           <p class="text-[11px] font-mono text-text-muted">{t("dao.activeNodesReq")}</p>
         </div>
 
-        <!-- Human Nodes Progress -->
-        <div class="space-y-3">
-          <div class="flex justify-between items-baseline font-mono">
-            <span class="text-xs text-text-secondary uppercase tracking-wider">{t("dao.humanNodes")}</span>
-            <span class="text-sm text-accent-emerald font-bold">{scannedPeers.toLocaleString()} Peers ({qualifiedPeers} Candidate Nodos)</span>
-          </div>
-          <div class="w-full h-3 rounded-full bg-bg-void/80 overflow-hidden border border-white/10 p-0.5">
-            <div class="h-full rounded-full bg-gradient-to-r from-accent-emerald to-accent-cyan transition-all duration-1000" style="width: {scanProgressPercent}%"></div>
-          </div>
-          <p class="text-[11px] font-mono text-text-muted">{t("dao.humanNodesReq")}</p>
-        </div>
       </div>
 
       <!-- Node Architecture & Decentralized Governance -->

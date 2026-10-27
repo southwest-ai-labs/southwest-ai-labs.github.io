@@ -55,6 +55,9 @@
       <a href="#iso" class="hover:text-accent-cyan transition-colors">{t("nav.iso")}</a>
       <a href="#gpu-cloud" class="hover:text-accent-cyan transition-colors">{t("nav.gpuCloud")}</a>
       <a href="#dao" class="hover:text-accent-cyan transition-colors">{t("nav.dao")}</a>
+      <a href="/roadmap" class="hover:text-white transition-colors">Roadmap</a>
+      <a href="/contribute" class="hover:text-white transition-colors">Contribute</a>
+      <a href="/security" class="hover:text-white transition-colors">Security</a>
     </nav>
 
     <!-- Header Actions -->
@@ -64,7 +67,7 @@
         <button
           onclick={() => { isThemeMenuOpen = !isThemeMenuOpen; isLangMenuOpen = false; }}
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-bg-surface border border-white/10 text-xs font-mono text-text-secondary hover:text-white hover:border-accent-cyan/40 transition-colors cursor-pointer"
-          aria-label="Toggle Theme"
+
         >
           <span>
             {#if $currentTheme === "dark"}🌙{:else if $currentTheme === "light"}☀️{:else}💻{/if}
@@ -109,7 +112,7 @@
         <button
           onclick={() => { isLangMenuOpen = !isLangMenuOpen; isThemeMenuOpen = false; }}
           class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-bg-surface border border-white/10 text-xs font-mono text-text-secondary hover:text-white hover:border-accent-cyan/40 transition-colors cursor-pointer"
-          aria-label="Select Language"
+
         >
           <span>🌐</span>
           <span class="uppercase font-bold">{$currentLang}</span>
@@ -187,7 +190,10 @@
         <a href="#iso" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.iso")}</a>
         <a href="#gpu-cloud" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.gpuCloud")}</a>
         <a href="#dao" onclick={toggleMenu} class="hover:text-accent-cyan">{t("nav.dao")}</a>
-      </nav>
+        <a href="/roadmap" class="hover:text-white transition-colors">Roadmap</a>
+      <a href="/contribute" class="hover:text-white transition-colors">Contribute</a>
+      <a href="/security" class="hover:text-white transition-colors">Security</a>
+    </nav>
 
       <div class="pt-4 border-t border-white/10 flex flex-wrap gap-2">
         {#each LANGUAGE_OPTIONS as opt}
